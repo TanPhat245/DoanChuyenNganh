@@ -22,7 +22,7 @@ const Contact = () => {
         </div>
         <div className="flex flex-col  items-start mt-[8px]">
           <i className="text-xl">
-            FOREVER. luôn lắng nghe và tiếp nhận mọi ý kiến ​đóng góp của bạn.
+            T1. luôn lắng nghe và tiếp nhận mọi ý kiến ​đóng góp của bạn.
             Bạn có thể tìm thấy thông tin liên lạc và vị trí của mình như bên
             dưới.
           </i>
