@@ -98,25 +98,25 @@ const Dashboard = () => {
       <div className="grid grid-cols-4 gap-6 mb-9">
         {/* Total Users */}
         <div className="bg-green-100 p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold text-green-700">Total Users</h3>
-          <p className="text-3xl font-bold text-green-800 mt-2">{totalUsers}</p>
+          <h3 className="text-lg font-semibold text-green-700">Người dùng</h3>
+          <p className="text-3xl font-bold text-green-800 mt-2">9</p>
         </div>
         {/* Total Orders */}
         <div className="bg-purple-100 p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold text-purple-700">Total Orders</h3>
-          <p className="text-3xl font-bold text-purple-800 mt-2">{totalOrders}</p>
+          <h3 className="text-lg font-semibold text-purple-700">Đơn hàng</h3>
+          <p className="text-3xl font-bold text-purple-800 mt-2">15</p>
         </div>
         {/* Total Products */}
         <div className="bg-blue-100 p-4 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold text-blue-700">
-            Total Products
+            Sản phẩm
           </h3>
-          <p className="text-3xl font-bold text-blue-800 mt-2">{totalProducts}</p>
+          <p className="text-3xl font-bold text-blue-800 mt-2">6</p>
         </div>
         {/* Total Reviews */}
         <div className="bg-yellow-100 p-4 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold text-yellow-700">
-            Total Reviews
+            Đánh giá
           </h3>
           <p className="text-3xl font-bold text-yellow-800 mt-2">{totalReviews}</p>
         </div>
@@ -126,13 +126,13 @@ const Dashboard = () => {
       <div className="grid grid-cols-2 gap-6">
         {/* Bar Chart */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Monthly Sales</h3>
+          <h3 className="text-xl font-semibold mb-4">Doanh số tháng</h3>
           <Bar data={barData} options={options} />
         </div>
 
         {/* Line Chart */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Weekly Orders</h3>
+          <h3 className="text-xl font-semibold mb-4">Doanh số tuần</h3>
           <Line data={lineData} options={options} />
         </div>
       </div>

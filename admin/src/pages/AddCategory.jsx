@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import axios from 'axios'
-import { backendUrl } from '../App'
+import { backendUrl } from '../App.jsx'
 import { toast } from 'react-toastify'
 
 
 const AddCategory = ({ token }) => {
     const [hovered, setHovered] = useState(false)
     const [name, setName] = useState("");
-    
 
     const onSubmitHandler = async (e) => {
       e.preventDefault();
@@ -21,7 +20,7 @@ const AddCategory = ({ token }) => {
       try {
           const data = { name };
   
-          const response = await axios.post(   + "/api/category/add", data, {
+          const response = await axios.post(backendUrl+ "/api/category/add", data, {
               headers: { 
                   'Content-Type': 'application/json',
                   'token': token  // Đảm bảo token hợp lệ và gửi đúng trong header
@@ -40,11 +39,7 @@ const AddCategory = ({ token }) => {
           toast.error(error.message || "Lỗi không xác định");
       }
   };
-  
-  
 
-      
-  
     return (
        <form onSubmit={onSubmitHandler}>
             <div style={{ padding: "20px", textAlign: "center" }}>

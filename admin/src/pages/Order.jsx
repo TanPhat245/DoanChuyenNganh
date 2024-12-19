@@ -93,7 +93,7 @@ const Order = ({ token }) => {
             <div className="flex flex-col justify-between text-gray-700">
               <p className="text-sm">ĐƠN: {order.items.length}</p>
               <p className="mt-3">PHƯƠNG THỨC: <span className="font-semibold">{order.paymentMethod}</span></p>
-              <p>THANH TOÁN: <span className={order.payment ? "text-green-600" : "text-red-600"}>{order.payment ? 'Đã thanh toán' : 'Chưa thanh toán'}</span></p>
+              <p>THANH TOÁN: <span className={order.payment ? "text-green-600" : "text-red-600"}>{order.payment ? 'Chưa thanh toán' : 'Đã thanh toán'}</span></p>
               <p className="text-sm">NGÀY ĐẶT: {new Date(order.date).toLocaleDateString()}</p>
             </div>
 
