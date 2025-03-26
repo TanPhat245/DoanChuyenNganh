@@ -177,23 +177,26 @@ const Add = ({ token }) => {
       </div>
 
       <div className="w-full">
-        <p className="mb-2">Mô tả</p>
-        <textarea
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
-          className="w-full max-w-[500px] px-3 py-2 min-h-[100px]"
-          placeholder="Nhập mô tả"
-          required
-        />
-        <button
-          type="button"
-          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
-          onClick={generateDescription}
-          disabled={loadingDesc}
-        >
-          {loadingDesc ? "Đang tạo..." : "Tạo mô tả tự động"}
-        </button>
-      </div>
+  <p className="mb-2">Mô tả     <button
+      type="button"
+      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition sm:w-auto w-full sm:ml-2"
+      onClick={generateDescription}
+      disabled={loadingDesc}
+    >
+      {loadingDesc ? "Đang tạo..." : "Tạo mô tả tự động"}
+    </button></p>
+  <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+    <textarea
+      onChange={(e) => setDescription(e.target.value)}
+      value={description}
+      className="w-full max-w-[500px] px-3 py-2 min-h-[100px] flex-1 border border-gray-300 rounded"
+      placeholder="Nhập mô tả"
+      required
+    />
+  </div>
+</div>
+
+
 
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
