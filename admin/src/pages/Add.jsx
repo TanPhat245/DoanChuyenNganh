@@ -189,7 +189,7 @@ const Add = ({ token }) => {
     <textarea
       onChange={(e) => setDescription(e.target.value)}
       value={description}
-      className="w-full max-w-[500px] px-3 py-2 min-h-[100px] flex-1 border border-gray-300 rounded"
+      className="w-full max-w-[500px] px-3 py-2 min-h-[300px] flex-1 border border-gray-300 rounded"
       placeholder="Nhập mô tả"
       required
     />
