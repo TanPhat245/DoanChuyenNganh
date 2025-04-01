@@ -15,13 +15,14 @@ const generateProductDescription = async (name) => {
             {
               text: `Viết một mô tả hấp dẫn cho sản phẩm quần áo:
                 - Tên: ${name}
-                - Nội dung nên ngắn gọn, hấp dẫn và chuyên nghiệp.`,
+                - Chất liệu: (Outer) 100% Polyester, (Side Panels, Back Neck) 95% Polyester, 5% Spandex
+                - Màu sắc: Trắng, Đỏ, Đen
+                - Nội dung vừa phải, hay và chuyên nghiệp.`,
             },
           ],
         },
       ],
     };
-
     const response = await axios.post(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
       prompt,
@@ -29,18 +30,15 @@ const generateProductDescription = async (name) => {
         headers: { "Content-Type": "application/json" },
       }
     );
-
     // Kiểm tra dữ liệu trả về từ API
     console.log(
       "Response từ Gemini API:",
       JSON.stringify(response.data, null, 2)
     );
-
     // Trích xuất mô tả từ response
     const generatedText =
       response.data?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "Mô tả sản phẩm chưa có sẵn.";
-
     return generatedText;
   } catch (error) {
     console.error(
@@ -73,7 +71,6 @@ const addProduct = async (req, res) => {
     const image2 = req.files.image2 && req.files.image2[0];
     const image3 = req.files.image3 && req.files.image3[0];
     const image4 = req.files.image4 && req.files.image4[0];
-
     // Xử lý ảnh upload lên Cloudinary
     const images = [image1, image2, image3, image4].filter(
       (item) => item !== undefined
@@ -86,14 +83,12 @@ const addProduct = async (req, res) => {
         return result.secure_url;
       })
     );
-
     // Gọi API Gemini để tạo mô tả sản phẩm
     const description = await generateProductDescription(
       name,
       category,
       subCategory
     );
-
     // Tạo dữ liệu sản phẩm
     const productData = {
       name,
@@ -107,7 +102,6 @@ const addProduct = async (req, res) => {
       date: Date.now(),
       status,
     };
-
     console.log("Dữ liệu sản phẩm trước khi lưu:", productData);
     const product = new productModel(productData);
     await product.save();
