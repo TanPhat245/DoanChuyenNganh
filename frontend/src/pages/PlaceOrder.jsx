@@ -28,33 +28,6 @@ const PlaceOrder = () => {
     const value = event.target.value;
     setFormData((data) => ({ ...data, [name]: value }));
   };
-
-  const [loginData, setLoginData] = useState({
-    email: '',
-    password: '',
-  });
-
-  const onLoginChangeHandler = (event) => {
-    const { name, value } = event.target;
-    setLoginData((data) => ({ ...data, [name]: value }));
-  };
-
-  const handleLoginSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post(`${backenUrl}/api/user/login`, loginData);
-      if (response.data.success) {
-        setToken(response.data.token); // Save the token
-        toast.success('Đăng nhập thành công');
-      } else {
-        toast.error('Đăng nhập thất bại');
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error('Đã xảy ra lỗi khi đăng nhập');
-    }
-  };
-
   const onSubmitHandler = async () => {
     setIsSubmitting(true);
     try {

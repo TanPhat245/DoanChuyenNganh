@@ -33,7 +33,7 @@ const placeOrders = async (req, res) => {
         const { userId, items, amount, address } = req.body;
 
         const orderData = {
-            userId: userId || null, // Nếu không đăng nhập, userId là null
+            userId,
             items,
             address,
             amount,

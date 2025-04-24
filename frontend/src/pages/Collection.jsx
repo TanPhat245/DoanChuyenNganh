@@ -110,10 +110,10 @@ const Collection = () => {
           <p className='mb-3 text-s font-medium'>TẤT CẢ SẢN PHẨM</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox"  value={'quan'} onChange={toggleCategory}/> Nam
+              <input className='w-3' type="checkbox"  value={'quần'} onChange={toggleCategory}/> Nam
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox"  value={'ao'} onChange={toggleCategory}/> Nữ
+              <input className='w-3' type="checkbox"  value={'áo'} onChange={toggleCategory}/> Nữ
             </p>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox"  value={'bag'} onChange={toggleCategory}/> Phụ kiện
